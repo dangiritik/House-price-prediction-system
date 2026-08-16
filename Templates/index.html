@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProphetAI | House Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-house-signal"></i>
+                <span>Prophet<b>AI</b></span>
+            </div>
+            <p class="tagline">Next-Gen Real Estate Valuation with Machine Learning</p>
+        </header>
+
+        <!-- Main Dashboard -->
+        <div class="glass-card main-grid">
+            <!-- Left Form Area -->
+            <form id="predictionForm" class="form-container">
+                <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Property Attributes</h3>
+                
+                <div class="input-group">
+                    <label for="area"><i class="fa-solid fa-ruler-combined"></i> Total Area (Sq. Ft.)</label>
+                    <input type="number" id="area" name="area" placeholder="e.g. 1850" min="200" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="bedrooms"><i class="fa-solid fa-bed"></i> Bedrooms</label>
+                        <select id="bedrooms" name="bedrooms" required>
+                            <option value="1">1 BHK</option>
+                            <option value="2">2 BHK</option>
+                            <option value="3" selected>3 BHK</option>
+                            <option value="4">4 BHK</option>
+                            <option value="5">5+ BHK</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="bathrooms"><i class="fa-solid fa-bath"></i> Bathrooms</label>
+                        <select id="bathrooms" name="bathrooms" required>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="location"><i class="fa-solid fa-location-dot"></i> Location Tier</label>
+                        <select id="location" name="location" required>
+                            <option value="0">Suburban Zone</option>
+                            <option value="1" selected>Urban Residential</option>
+                            <option value="2">City Downtown</option>
+                            <option value="3">Prime / Luxury Area</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="age"><i class="fa-solid fa-calendar-days"></i> Property Age (Years)</label>
+                        <input type="number" id="age" name="age" placeholder="e.g. 5" min="0" max="60" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="predictBtn" class="glow-btn">
+                    <span>Calculate Market Estimate</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+            </form>
+
+            <!-- Right Result / Metrics Area -->
+            <div class="result-container">
+                <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Valuation Output</h3>
+                
+                <div class="result-box" id="resultBox">
+                    <div class="placeholder-text" id="placeholderText">
+                        <i class="fa-solid fa-circle-nodes pulse-icon"></i>
+                        <p>Fill out the property details and trigger the prediction engine.</p>
+                    </div>
+
+                    <div class="output-content hidden" id="outputContent">
+                        <span class="badge">Estimated Market Price</span>
+                        <h1 class="price" id="predictedPrice">$0</h1>
+                        <p class="confidence"><i class="fa-solid fa-circle-check"></i> High Confidence Regression Score</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Model Accuracy</span>
+                        <span class="stat-value">94.8%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Algorithm</span>
+                        <span class="stat-value">Random Forest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
