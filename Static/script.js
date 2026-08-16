@@ -5,16 +5,17 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
     const placeholder = document.getElementById('placeholderText');
     const outputContent = document.getElementById('outputContent');
     const priceDisplay = document.getElementById('predictedPrice');
+    const lakhCrDisplay = document.getElementById('lakhCrFormat');
 
-    // UI Loading state
-    predictBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Processing...`;
+    predictBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Calculating Valuation...`;
     predictBtn.disabled = true;
 
     const payload = {
+        state: document.getElementById('state').value,
         area: document.getElementById('area').value,
         bedrooms: document.getElementById('bedrooms').value,
         bathrooms: document.getElementById('bathrooms').value,
-        location: document.getElementById('location').value,
+        locality_tier: document.getElementById('locality_tier').value,
         age: document.getElementById('age').value
     };
 
@@ -31,26 +32,36 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
             placeholder.classList.add('hidden');
             outputContent.classList.remove('hidden');
 
-            // Animated counter effect
-            animateValue(priceDisplay, 0, data.predicted_price, 1000);
+            const finalVal = Math.round(data.predicted_price);
+            animateIndianRupee(priceDisplay, 0, finalVal, 900);
+            lakhCrDisplay.innerText = formatToIndianUnits(finalVal);
         } else {
             alert('Prediction error: ' + data.message);
         }
     } catch (err) {
-        alert('Server connection failed. Make sure app.py is running.');
+        alert('Server unreachable. Ensure app.py is running.');
     } finally {
-        predictBtn.innerHTML = `<span>Calculate Market Estimate</span> <i class="fa-solid fa-wand-magic-sparkles"></i>`;
+        predictBtn.innerHTML = `<span>Calculate Market Value</span> <i class="fa-solid fa-indian-rupee-sign"></i>`;
         predictBtn.disabled = false;
     }
 });
 
-function animateValue(obj, start, end, duration) {
+function formatToIndianUnits(val) {
+    if (val >= 10000000) {
+        return `≈ ₹${(val / 10000000).toFixed(2)} Crore`;
+    } else if (val >= 100000) {
+        return `≈ ₹${(val / 100000).toFixed(2)} Lakh`;
+    }
+    return '';
+}
+
+function animateIndianRupee(obj, start, end, duration) {
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
         const currentVal = Math.floor(progress * (end - start) + start);
-        obj.innerHTML = `$${currentVal.toLocaleString()}`;
+        obj.innerHTML = `₹${currentVal.toLocaleString('en-IN')}`;
         if (progress < 1) {
             window.requestAnimationFrame(step);
         }

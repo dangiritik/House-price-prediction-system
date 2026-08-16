@@ -279,3 +279,9 @@ input:focus, select:focus {
 @media (max-width: 768px) {
     .main-grid { grid-template-columns: 1fr; }
 }
+.formatted-lakh {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}

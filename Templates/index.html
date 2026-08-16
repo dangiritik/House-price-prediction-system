@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProphetAI | House Price Prediction</title>
+    <title>BharatValuation | All India House Price Predictor</title>
     <link rel="stylesheet" href="/static/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,21 +19,79 @@
         <!-- Header -->
         <header class="header">
             <div class="logo">
-                <i class="fa-solid fa-house-signal"></i>
-                <span>Prophet<b>AI</b></span>
+                <i class="fa-solid fa-earth-asia"></i>
+                <span>Bharat<b>Valuation</b></span>
             </div>
-            <p class="tagline">Next-Gen Real Estate Valuation with Machine Learning</p>
+            <p class="tagline">Pan-India Real Estate Price Prediction (28 States & 8 UTs)</p>
         </header>
 
-        <!-- Main Dashboard -->
+        <!-- Main Card -->
         <div class="glass-card main-grid">
-            <!-- Left Form Area -->
+            <!-- Form Area -->
             <form id="predictionForm" class="form-container">
                 <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Property Attributes</h3>
                 
+                <!-- State / UT Selection -->
                 <div class="input-group">
-                    <label for="area"><i class="fa-solid fa-ruler-combined"></i> Total Area (Sq. Ft.)</label>
-                    <input type="number" id="area" name="area" placeholder="e.g. 1850" min="200" required>
+                    <label for="state"><i class="fa-solid fa-map-pin"></i> Select State / Union Territory</label>
+                    <select id="state" name="state" required>
+                        <optgroup label="── 28 States ──">
+                            <option value="0">Andhra Pradesh</option>
+                            <option value="1">Arunachal Pradesh</option>
+                            <option value="2">Assam</option>
+                            <option value="3">Bihar</option>
+                            <option value="4">Chhattisgarh</option>
+                            <option value="5">Goa</option>
+                            <option value="6">Gujarat</option>
+                            <option value="7">Haryana</option>
+                            <option value="8">Himachal Pradesh</option>
+                            <option value="9">Jharkhand</option>
+                            <option value="10">Karnataka</option>
+                            <option value="11">Kerala</option>
+                            <option value="12">Madhya Pradesh</option>
+                            <option value="13">Maharashtra</option>
+                            <option value="14">Manipur</option>
+                            <option value="15">Meghalaya</option>
+                            <option value="16">Mizoram</option>
+                            <option value="17">Nagaland</option>
+                            <option value="18">Odisha</option>
+                            <option value="19">Punjab</option>
+                            <option value="20">Rajasthan</option>
+                            <option value="21">Sikkim</option>
+                            <option value="22">Tamil Nadu</option>
+                            <option value="23">Telangana</option>
+                            <option value="24">Tripura</option>
+                            <option value="25" selected>Uttar Pradesh</option>
+                            <option value="26">Uttarakhand</option>
+                            <option value="27">West Bengal</option>
+                        </optgroup>
+                        <optgroup label="── 8 Union Territories ──">
+                            <option value="28">Andaman and Nicobar Islands</option>
+                            <option value="29">Chandigarh</option>
+                            <option value="30">Dadra and Nagar Haveli and Daman and Diu</option>
+                            <option value="31">Delhi (National Capital Territory)</option>
+                            <option value="32">Jammu and Kashmir</option>
+                            <option value="33">Ladakh</option>
+                            <option value="34">Lakshadweep</option>
+                            <option value="35">Puducherry</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="area"><i class="fa-solid fa-ruler-combined"></i> Area (Sq. Ft.)</label>
+                        <input type="number" id="area" name="area" placeholder="e.g. 1500" min="250" max="15000" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="locality_tier"><i class="fa-solid fa-city"></i> Locality Tier</label>
+                        <select id="locality_tier" name="locality_tier" required>
+                            <option value="0">Suburban / Outskirts</option>
+                            <option value="1" selected>City / Residential Core</option>
+                            <option value="2">Prime / CBD / Luxury Tier</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-row">
@@ -51,61 +109,50 @@
                     <div class="input-group">
                         <label for="bathrooms"><i class="fa-solid fa-bath"></i> Bathrooms</label>
                         <select id="bathrooms" name="bathrooms" required>
-                            <option value="1">1</option>
-                            <option value="2" selected>2</option>
-                            <option value="3">3</option>
-                            <option value="4">4+</option>
+                            <option value="1">1 Bath</option>
+                            <option value="2" selected>2 Baths</option>
+                            <option value="3">3 Baths</option>
+                            <option value="4">4+ Baths</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="input-group">
-                        <label for="location"><i class="fa-solid fa-location-dot"></i> Location Tier</label>
-                        <select id="location" name="location" required>
-                            <option value="0">Suburban Zone</option>
-                            <option value="1" selected>Urban Residential</option>
-                            <option value="2">City Downtown</option>
-                            <option value="3">Prime / Luxury Area</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="age"><i class="fa-solid fa-calendar-days"></i> Property Age (Years)</label>
-                        <input type="number" id="age" name="age" placeholder="e.g. 5" min="0" max="60" required>
-                    </div>
+                <div class="input-group">
+                    <label for="age"><i class="fa-solid fa-calendar-days"></i> Property Age (Years)</label>
+                    <input type="number" id="age" name="age" placeholder="e.g. 2 (0 for New Construction)" min="0" max="60" required>
                 </div>
 
                 <button type="submit" id="predictBtn" class="glow-btn">
-                    <span>Calculate Market Estimate</span>
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Calculate Market Value</span>
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
                 </button>
             </form>
 
-            <!-- Right Result / Metrics Area -->
+            <!-- Results Output -->
             <div class="result-container">
-                <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Valuation Output</h3>
+                <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Valuation Estimate</h3>
                 
                 <div class="result-box" id="resultBox">
                     <div class="placeholder-text" id="placeholderText">
-                        <i class="fa-solid fa-circle-nodes pulse-icon"></i>
-                        <p>Fill out the property details and trigger the prediction engine.</p>
+                        <i class="fa-solid fa-house-chimney-window pulse-icon"></i>
+                        <p>Select your State/UT, configure property specs, and generate the predicted price.</p>
                     </div>
 
                     <div class="output-content hidden" id="outputContent">
                         <span class="badge">Estimated Market Price</span>
-                        <h1 class="price" id="predictedPrice">$0</h1>
-                        <p class="confidence"><i class="fa-solid fa-circle-check"></i> High Confidence Regression Score</p>
+                        <h1 class="price" id="predictedPrice">₹0</h1>
+                        <p class="formatted-lakh" id="lakhCrFormat"></p>
+                        <p class="confidence"><i class="fa-solid fa-circle-check"></i> Scikit-Learn Multi-State Regressor</p>
                     </div>
                 </div>
 
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <span class="stat-label">Model Accuracy</span>
-                        <span class="stat-value">94.8%</span>
+                        <span class="stat-label">Coverage</span>
+                        <span class="stat-value">28 States & 8 UTs</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-label">Algorithm</span>
+                        <span class="stat-label">Model Pipeline</span>
                         <span class="stat-value">Random Forest</span>
                     </div>
                 </div>
