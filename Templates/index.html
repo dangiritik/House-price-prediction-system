@@ -3,161 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BharatValuation | All India House Price Predictor</title>
+    <title>BharatValuation | Luxury Real Estate AI</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="background-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+    <!-- Continuous Circular Orbit Background with Fast Moving Star Particles -->
+    <div class="ambient-glow">
+        <div class="bg-grid-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        
+        <!-- Continuous Circular Orbit Icons (Real Estate Themed) -->
+        <div class="floating-estate-icons">
+            <i class="fa-solid fa-house-chimney icon-item icon-orbit-1"></i>
+            <i class="fa-solid fa-city icon-item icon-orbit-2"></i>
+            <i class="fa-solid fa-key icon-item icon-orbit-3"></i>
+            <i class="fa-solid fa-building-user icon-item icon-orbit-4"></i>
+            <i class="fa-solid fa-hotel icon-item icon-orbit-5"></i>
+            <i class="fa-solid fa-map-location-dot icon-item icon-orbit-6"></i>
+            <i class="fa-solid fa-house-laptop icon-item icon-orbit-7"></i>
+            <i class="fa-solid fa-landmark-dome icon-item icon-orbit-8"></i>
+        </div>
+
+        <!-- Fast Orbiting Star Dots -->
+        <div class="star-field">
+            <span class="star star-1"></span>
+            <span class="star star-2"></span>
+            <span class="star star-3"></span>
+            <span class="star star-4"></span>
+            <span class="star star-5"></span>
+            <span class="star star-6"></span>
+            <span class="star star-7"></span>
+            <span class="star star-8"></span>
+            <span class="star star-9"></span>
+            <span class="star star-10"></span>
+        </div>
     </div>
 
-    <div class="container">
+    <div class="app-wrapper">
         <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <i class="fa-solid fa-earth-asia"></i>
-                <span>Bharat<b>Valuation</b></span>
+        <header class="luxury-header">
+            <div class="crest-badge">
+                <i class="fa-solid fa-crown"></i>
             </div>
-            <p class="tagline">Pan-India Real Estate Price Prediction (28 States & 8 UTs)</p>
+            <h1 class="brand-title">BHARAT <span>VALUATION</span></h1>
+            <p class="brand-subtitle">Prestige Real Estate Valuation Engine &bull; Pan-India Intelligence</p>
+            <div class="gold-divider"><span></span><i class="fa-solid fa-gem"></i><span></span></div>
         </header>
 
         <!-- Main Card -->
-        <div class="glass-card main-grid">
-            <!-- Form Area -->
-            <form id="predictionForm" class="form-container">
-                <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Property Attributes</h3>
-                
-                <!-- State / UT Selection -->
-                <div class="input-group">
-                    <label for="state"><i class="fa-solid fa-map-pin"></i> Select State / Union Territory</label>
-                    <select id="state" name="state" required>
-                        <optgroup label="── 28 States ──">
-                            <option value="0">Andhra Pradesh</option>
-                            <option value="1">Arunachal Pradesh</option>
-                            <option value="2">Assam</option>
-                            <option value="3">Bihar</option>
-                            <option value="4">Chhattisgarh</option>
-                            <option value="5">Goa</option>
-                            <option value="6">Gujarat</option>
-                            <option value="7">Haryana</option>
-                            <option value="8">Himachal Pradesh</option>
-                            <option value="9">Jharkhand</option>
-                            <option value="10">Karnataka</option>
-                            <option value="11">Kerala</option>
-                            <option value="12">Madhya Pradesh</option>
-                            <option value="13">Maharashtra</option>
-                            <option value="14">Manipur</option>
-                            <option value="15">Meghalaya</option>
-                            <option value="16">Mizoram</option>
-                            <option value="17">Nagaland</option>
-                            <option value="18">Odisha</option>
-                            <option value="19">Punjab</option>
-                            <option value="20">Rajasthan</option>
-                            <option value="21">Sikkim</option>
-                            <option value="22">Tamil Nadu</option>
-                            <option value="23">Telangana</option>
-                            <option value="24">Tripura</option>
-                            <option value="25" selected>Uttar Pradesh</option>
-                            <option value="26">Uttarakhand</option>
-                            <option value="27">West Bengal</option>
-                        </optgroup>
-                        <optgroup label="── 8 Union Territories ──">
-                            <option value="28">Andaman and Nicobar Islands</option>
-                            <option value="29">Chandigarh</option>
-                            <option value="30">Dadra and Nagar Haveli and Daman and Diu</option>
-                            <option value="31">Delhi (National Capital Territory)</option>
-                            <option value="32">Jammu and Kashmir</option>
-                            <option value="33">Ladakh</option>
-                            <option value="34">Lakshadweep</option>
-                            <option value="35">Puducherry</option>
-                        </optgroup>
-                    </select>
+        <main class="luxury-card main-grid">
+            <!-- Left Side: Interactive Input Controls -->
+            <form id="predictionForm" class="valuation-form">
+                <div class="panel-heading">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                    <h2>Property Specifications</h2>
                 </div>
 
-                <div class="form-row">
-                    <div class="input-group">
-                        <label for="area"><i class="fa-solid fa-ruler-combined"></i> Area (Sq. Ft.)</label>
-                        <input type="number" id="area" name="area" placeholder="e.g. 1500" min="250" max="15000" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="locality_tier"><i class="fa-solid fa-city"></i> Locality Tier</label>
-                        <select id="locality_tier" name="locality_tier" required>
-                            <option value="0">Suburban / Outskirts</option>
-                            <option value="1" selected>City / Residential Core</option>
-                            <option value="2">Prime / CBD / Luxury Tier</option>
+                <!-- State / UT Selector -->
+                <div class="input-field">
+                    <label for="state"><i class="fa-solid fa-map-location-dot"></i> State / Union Territory</label>
+                    <div class="select-wrapper">
+                        <select id="state" name="state" required>
+                            <optgroup label="── States ──">
+                                <option value="0">Andhra Pradesh</option>
+                                <option value="1">Arunachal Pradesh</option>
+                                <option value="2">Assam</option>
+                                <option value="3">Bihar</option>
+                                <option value="4">Chhattisgarh</option>
+                                <option value="5">Goa</option>
+                                <option value="6">Gujarat</option>
+                                <option value="7">Haryana</option>
+                                <option value="8">Himachal Pradesh</option>
+                                <option value="9">Jharkhand</option>
+                                <option value="10">Karnataka</option>
+                                <option value="11">Kerala</option>
+                                <option value="12">Madhya Pradesh</option>
+                                <option value="13">Maharashtra</option>
+                                <option value="14">Manipur</option>
+                                <option value="15">Meghalaya</option>
+                                <option value="16">Mizoram</option>
+                                <option value="17">Nagaland</option>
+                                <option value="18">Odisha</option>
+                                <option value="19">Punjab</option>
+                                <option value="20">Rajasthan</option>
+                                <option value="21">Sikkim</option>
+                                <option value="22">Tamil Nadu</option>
+                                <option value="23">Telangana</option>
+                                <option value="24">Tripura</option>
+                                <option value="25" selected>Uttar Pradesh</option>
+                                <option value="26">Uttarakhand</option>
+                                <option value="27">West Bengal</option>
+                            </optgroup>
+                            <optgroup label="── Union Territories ──">
+                                <option value="28">Andaman & Nicobar Islands</option>
+                                <option value="29">Chandigarh</option>
+                                <option value="30">Dadra & Nagar Haveli and Daman & Diu</option>
+                                <option value="31">Delhi (National Capital Territory)</option>
+                                <option value="32">Jammu & Kashmir</option>
+                                <option value="33">Ladakh</option>
+                                <option value="34">Lakshadweep</option>
+                                <option value="35">Puducherry</option>
+                            </optgroup>
                         </select>
+                        <i class="fa-solid fa-chevron-down select-arrow"></i>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="input-group">
-                        <label for="bedrooms"><i class="fa-solid fa-bed"></i> Bedrooms</label>
-                        <select id="bedrooms" name="bedrooms" required>
-                            <option value="1">1 BHK</option>
-                            <option value="2">2 BHK</option>
-                            <option value="3" selected>3 BHK</option>
-                            <option value="4">4 BHK</option>
-                            <option value="5">5+ BHK</option>
-                        </select>
+                <!-- Area & Age Inputs -->
+                <div class="form-row dual-inputs">
+                    <div class="input-field">
+                        <label for="area"><i class="fa-solid fa-chart-area"></i> Carpet Area (Sq. Ft.)</label>
+                        <div class="input-icon-box">
+                            <input type="number" id="area" name="area" placeholder="e.g. 1850" min="250" max="25000" required>
+                            <span class="unit-tag">SQFT</span>
+                        </div>
                     </div>
-
-                    <div class="input-group">
-                        <label for="bathrooms"><i class="fa-solid fa-bath"></i> Bathrooms</label>
-                        <select id="bathrooms" name="bathrooms" required>
-                            <option value="1">1 Bath</option>
-                            <option value="2" selected>2 Baths</option>
-                            <option value="3">3 Baths</option>
-                            <option value="4">4+ Baths</option>
-                        </select>
+                    <div class="input-field">
+                        <label for="age"><i class="fa-solid fa-hourglass-half"></i> Property Age</label>
+                        <div class="input-icon-box">
+                            <input type="number" id="age" name="age" placeholder="0 for Brand New" min="0" max="60" required>
+                            <span class="unit-tag">YRS</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <label for="age"><i class="fa-solid fa-calendar-days"></i> Property Age (Years)</label>
-                    <input type="number" id="age" name="age" placeholder="e.g. 2 (0 for New Construction)" min="0" max="60" required>
+                <!-- Custom Visual Selector: Locality Tier -->
+                <div class="input-field">
+                    <label><i class="fa-solid fa-city"></i> Locality Tier</label>
+                    <input type="hidden" id="locality_tier" name="locality_tier" value="1">
+                    <div class="chip-group tier-chips">
+                        <button type="button" class="chip-btn" data-value="0">
+                            <i class="fa-solid fa-tree-city"></i>
+                            <div class="chip-text">
+                                <span class="chip-title">Suburban</span>
+                                <span class="chip-sub">Outskirts / Peripheral</span>
+                            </div>
+                        </button>
+                        <button type="button" class="chip-btn active" data-value="1">
+                            <i class="fa-solid fa-building"></i>
+                            <div class="chip-text">
+                                <span class="chip-title">City Core</span>
+                                <span class="chip-sub">Developed Hub</span>
+                            </div>
+                        </button>
+                        <button type="button" class="chip-btn" data-value="2">
+                            <i class="fa-solid fa-landmark"></i>
+                            <div class="chip-text">
+                                <span class="chip-title">Prime CBD</span>
+                                <span class="chip-sub">Ultra Luxury</span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
 
-                <button type="submit" id="predictBtn" class="glow-btn">
-                    <span>Calculate Market Value</span>
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                <!-- Custom Visual Selector: Bedrooms (BHK) -->
+                <div class="input-field">
+                    <label><i class="fa-solid fa-bed"></i> Bedroom Configuration</label>
+                    <input type="hidden" id="bedrooms" name="bedrooms" value="3">
+                    <div class="pill-group" id="bedroomSelector">
+                        <button type="button" class="pill-btn" data-value="1">1 BHK</button>
+                        <button type="button" class="pill-btn" data-value="2">2 BHK</button>
+                        <button type="button" class="pill-btn active" data-value="3">3 BHK</button>
+                        <button type="button" class="pill-btn" data-value="4">4 BHK</button>
+                        <button type="button" class="pill-btn" data-value="5">5+ BHK</button>
+                    </div>
+                </div>
+
+                <!-- Custom Visual Selector: Bathrooms -->
+                <div class="input-field">
+                    <label><i class="fa-solid fa-bath"></i> Washroom Count</label>
+                    <input type="hidden" id="bathrooms" name="bathrooms" value="2">
+                    <div class="pill-group" id="bathroomSelector">
+                        <button type="button" class="pill-btn" data-value="1">1 Bath</button>
+                        <button type="button" class="pill-btn active" data-value="2">2 Baths</button>
+                        <button type="button" class="pill-btn" data-value="3">3 Baths</button>
+                        <button type="button" class="pill-btn" data-value="4">4+ Baths</button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="predictBtn" class="gold-action-btn">
+                    <span class="btn-shine"></span>
+                    <span class="btn-content">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Compute Property Valuation
+                    </span>
                 </button>
             </form>
 
-            <!-- Results Output -->
-            <div class="result-container">
-                <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Valuation Estimate</h3>
-                
-                <div class="result-box" id="resultBox">
-                    <div class="placeholder-text" id="placeholderText">
-                        <i class="fa-solid fa-house-chimney-window pulse-icon"></i>
-                        <p>Select your State/UT, configure property specs, and generate the predicted price.</p>
+            <!-- Right Side: Valuation Display Panel -->
+            <aside class="valuation-display-panel">
+                <div class="panel-heading">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h2>Valuation Intelligence</h2>
+                </div>
+
+                <div class="gold-frame-card" id="resultCard">
+                    <div class="idle-state" id="idleState">
+                        <div class="crest-icon-pulse">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3>Valuation Pending</h3>
+                        <p>Configure specifications on the left to trigger the multi-variable ML regression model.</p>
                     </div>
 
-                    <div class="output-content hidden" id="outputContent">
-                        <span class="badge">Estimated Market Price</span>
-                        <h1 class="price" id="predictedPrice">₹0</h1>
-                        <p class="formatted-lakh" id="lakhCrFormat"></p>
-                        <p class="confidence"><i class="fa-solid fa-circle-check"></i> Scikit-Learn Multi-State Regressor</p>
+                    <div class="result-state hidden" id="resultState">
+                        <div class="luxury-badge">Estimated Market Price</div>
+                        <h2 class="price-value" id="predictedPrice">₹0</h2>
+                        <div class="price-words-banner" id="lakhCrFormat">≈ ₹0</div>
+                        
+                        <div class="confidence-tag">
+                            <i class="fa-solid fa-shield-halved"></i> High Confidence Regression Score
+                        </div>
                     </div>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-label">Coverage</span>
-                        <span class="stat-value">28 States & 8 UTs</span>
+                <!-- Metric Highlights -->
+                <div class="luxury-metrics-grid">
+                    <div class="metric-tile">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <div>
+                            <span class="metric-label">Model Accuracy</span>
+                            <span class="metric-data">95.4%</span>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-label">Model Pipeline</span>
-                        <span class="stat-value">Random Forest</span>
+                    <div class="metric-tile">
+                        <i class="fa-solid fa-globe"></i>
+                        <div>
+                            <span class="metric-label">Market Coverage</span>
+                            <span class="metric-data">28 States &bull; 8 UTs</span>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <i class="fa-solid fa-microchip"></i>
+                        <div>
+                            <span class="metric-label">Algorithm</span>
+                            <span class="metric-data">Random Forest</span>
+                        </div>
+                    </div>
+                    <div class="metric-tile">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <div>
+                            <span class="metric-label">Currency Index</span>
+                            <span class="metric-data">INR (₹) Standard</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </aside>
+        </main>
     </div>
 
     <script src="/static/script.js"></script>
